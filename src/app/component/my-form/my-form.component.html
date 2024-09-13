@@ -1,0 +1,30 @@
+<div class="container p-4 mt-8  col-4  rounded  "text-white>
+<form [formGroup]="form">
+  <label for="name" class="text-white">Name:</label>
+  <input id="name" class="form-control col-6" formControlName="name" />
+
+  <label for="email" class="text-white">Email:</label>
+  <input id="email" class="form-control"  formControlName="email" />
+
+  <label for="subscribed" class="text-white">Subscribe:</label>
+  <input id="subscribed" form-check-input type="checkbox" formControlName="subscribed" />
+
+<br>
+  <label for="country" class="text-white">Country:</label>
+  <select id="country" class="form-select" formControlName="country">
+    <option value="">Select a country</option>
+    <option value="us">United States</option>
+    <option value="ca">Canada</option>
+  </select>
+  <label for="floatingTextarea" class="text-white">Comments</label>
+  <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" formControlName="textarea"></textarea>
+
+</form>
+
+</div>
+<div class="container col-4  p-4 mt-4 bg-transparent">
+
+  <button (click)="undo()" [disabled]="!canUndo()" class="btn btn-primary  ">Undo Text</button>
+<button (click)="redo()" [disabled]="!canRedo()" class="btn btn-success float-end ">Redo Text</button>
+</div>
+
